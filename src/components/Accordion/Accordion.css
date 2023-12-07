@@ -33,10 +33,12 @@
     height: 0;
     overflow: hidden;
     transition: height 300ms linear;
+    min-height: 100%;
   }
   
   .accordion-collapse.open {
     height: auto;
+    
   }
   
   .accordion-body {

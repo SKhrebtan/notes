@@ -1,9 +1,12 @@
 import { useRef } from 'react'
 import {ReactComponent as ArrowSvg} from 'img/arrowdown2.svg'
 import './Accordion.css'
+import { Accordion2 } from './Accordion2/Accordion2'
 
 export const AccordionItem = ({ faqItem, onClick, isOpen }) => {
     const itemRef = useRef(null)
+
+ 
     return (
             <li className='accordion-item'>
             <button
@@ -15,11 +18,13 @@ export const AccordionItem = ({ faqItem, onClick, isOpen }) => {
             </button>
             <div
                 className="accordion-collapse"
-                style={
-                    isOpen ? {height: itemRef.current.scrollHeight} : {height: '0px'}
-                }
+                style={isOpen ? {height: itemRef.current.scrollHeight} : {height: '0px'}}
             >
-                        <div className='accordion-body' ref={itemRef}>{faqItem.a}</div>
+                        <div className='accordion-body' ref={itemRef}>
+                            {faqItem.a}
+                            {faqItem.additionalInfo && <Accordion2 data={faqItem.additionalInfo}/>}
+                            {faqItem.summary && faqItem.summary}
+                            </div>
                         </div>
                        
                     </li>

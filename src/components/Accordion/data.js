@@ -2,12 +2,74 @@ export const AccordionData = [
     {
         id: '01',
         q: 'GraphQL',
-        a: 'GraphQL is a query language for your API, defining types and fields on those types, not tied to any specific database, backed by existing code.'
+        a: 'GraphQL is a query language for your API, defining types and fields on those types, not tied to any specific database, backed by existing code.',
+        additionalInfo: [
+            {
+            q: 'Declarative Data Fetching',
+            a: 'Clients can specify the structure of the response they need, and the server will return only the requested data. This helps in avoiding over-fetching or under-fetching of data.'
+        },
+        {
+            q: 'Single Endpoint',
+            a: 'Unlike REST, which often requires multiple endpoints for different resources, GraphQL typically uses a single endpoint for all data operations. This simplifies the API structure and makes it more flexible.'
+        },
+        {
+            q: 'Strong Typing',
+            a: 'GraphQL APIs are strongly typed, and a schema defines the types and operations that are available. This allows for better validation of queries and introspection of the API.'
+        },
+        {
+            q: 'Real-time Data with Subscriptions',
+            a: 'GraphQL supports real-time data updates through subscriptions. Clients can subscribe to specific events, and the server will push updates to clients when relevant data changes.'
+        },
+        {
+            q: 'Introspection',
+            a: 'Clients can query the GraphQL schema to discover the types and capabilities of the API. This self-documenting feature makes it easier for developers to understand and interact with the API.'
+        },
+        {
+            q: 'Backend Aggregation',
+            a: 'GraphQL can aggregate data from multiple sources on the server side, enabling clients to retrieve complex data structures in a single request.'
+        }
+    ],
+    summary: 'GraphQL has gained popularity in web development, particularly for front-end applications, as it provides more flexibility and efficiency in data fetching. It is used by a variety of organizations and has a growing ecosystem of tools and libraries to support its implementation in various programming languages.'
     },
 {
     id: '02',
      q: 'NextJs',
-        a: "Next is a React framework that enables several extra features, including server-side rendering and generating static websites, automatic code-splitting for faster page loads. Simple client-side routing. Able to implement with express or any other NodeJs server. "
+        a: "Next.js is a popular open-source React framework for building web applications. It is maintained by Vercel, a platform for deploying and hosting web applications. Next.js is designed to make it easy to create server-rendered React applications and provides a variety of features to simplify the development process.",
+        additionalInfo: [
+            {
+            q: 'Server-Side Rendering (SSR)',
+            a: 'Next.js allows you to implement server-side rendering, which means that the initial rendering of pages can be done on the server rather than in the browser. This can lead to faster page loads and better search engine optimization (SEO).'
+        },
+        {
+            q: 'Static Site Generation (SSG)',
+            a: 'Next.js supports static site generation, where pages can be pre-built at build time. This is useful for content that doesnt change frequently, as it allows for fast loading times and reduces the need for server resources.'
+        },
+        {
+            q: 'Automatic Code Splitting',
+            a: 'Next.js automatically splits the JavaScript code into smaller chunks, and only loads the code necessary for the requested page. This can improve the initial loading speed of your application.'
+        },
+        {
+            q: 'File-Based Routing',
+            a: 'Next.js uses a file-based routing system, where the file structure in the pages directory corresponds to the routes in your application. This makes it intuitive and easy to organize your project.'
+        },
+        {
+            q: 'API Routes',
+            a: 'Next.js allows you to create API routes within your project, making it easy to build serverless functions and handle backend logic.'
+        },
+        {
+            q: 'CSS-in-JS Support',
+            a: 'Next.js has built-in support for styling solutions like CSS-in-JS, allowing developers to style components using their preferred styling approach.'
+        },
+        {
+            q: 'Plugin System',
+            a: 'Next.js has a plugin system that allows developers to extend the functionality of their applications by integrating various plugins.'
+        },
+        {
+            q: 'TypeScript Support',
+            a: 'Next.js has excellent support for TypeScript, making it easy to use TypeScript in your React applications. Next.js has become a popular choice for building React applications, especially for projects that require server-side rendering or static site generation. It simplifies many aspects of web development and offers a great developer experience. '
+        }
+    ],
+    summary: 'Next.js has become a popular choice for building React applications, especially for projects that require server-side rendering or static site generation. It simplifies many aspects of web development and offers a great developer experience.'
     },
     {
         id: '03',
