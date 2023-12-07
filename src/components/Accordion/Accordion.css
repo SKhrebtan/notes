@@ -64,3 +64,30 @@
     transform: translateY(-50%) rotate(180deg);
     fill: red;
   }
+
+  .input {
+    padding: 12px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Ефект ховера */
+  .input:hover {
+    border-color: #2980b9;
+  }
+  
+  /* Ефект фокусу */
+  .input:focus {
+    outline: none;
+    border-color: #2ecc71;
+    box-shadow: 0 0 5px rgba(46, 204, 113, 0.8);
+  }
+  
+  /* Додатковий стиль для текстового вводу */
+  .input[type="text"] {
+    color: #333;
+  }
