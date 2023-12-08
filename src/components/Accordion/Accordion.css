@@ -31,8 +31,11 @@
   
   .accordion-collapse {
     height: 0;
+    background-color: #000;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
     overflow: hidden;
-    transition: height 300ms linear;
+    transition: height 500ms linear;
     min-height: 100%;
   }
   

@@ -4,7 +4,7 @@ import './Accordion2.css';
 
 export const Accordion2 = ({ setItemHeight, data}) => {
     const [openId, setOpenId] = useState(null);
- 
+   
     return (
         <ul className="accordion2">
             {data.map((faqItem, id) => 
