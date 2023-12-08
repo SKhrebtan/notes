@@ -4,20 +4,19 @@ import './Accordion2.css'
 import { ReactComponent as PlusSvg } from 'img/plus.svg';
 import { ReactComponent as MinusSvg } from 'img/minus.svg';
 
-export const AccordionItem2 = ({faqItem, onClick, isOpen }) => {
+export const AccordionItem2 = ({faqItem, onClick, isOpen, setItemHeight}) => {
     const itemRef = useRef(null)
 
     return (
             <li className={`accordion-item2 ${isOpen ? 'isopened' : ''}`}>
-            {/* <button
-                onClick={()=>onClick()}
-                type='button'
-                className='accordion-header2'>
-                {faqItem.q}
-                <ArrowSvg className={`accordion-arrow ${isOpen ? 'active' : ''}`} />
-            </button> */}
-            <button
-                onClick={()=>onClick()}
+                 <button
+                onClick={()=>{
+                                      onClick()
+                    if (itemRef.current.scrollHeight !== null){
+                        setItemHeight(isOpen ? 0 : itemRef.current.scrollHeight);
+                    } 
+                                                      
+                }}
                 type='button'
                 className='accordion-header2'>
                 {faqItem.q}
