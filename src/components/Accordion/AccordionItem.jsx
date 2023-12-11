@@ -3,11 +3,14 @@ import {ReactComponent as ArrowSvg} from 'img/arrowdown2.svg'
 import './Accordion.css'
 import { Accordion2 } from './Accordion2/Accordion2'
 
+
+
 export const AccordionItem = ({ faqItem, onClick, isOpen }) => {
 const itemRef = useRef(null)
 const [itemHeight, setItemHeight] = useState(0);
 const [contentHeight, setContentHeight] = useState(0);
 const [initialHeight, setInitialHeight] = useState(0);
+
 
 useEffect(() => {
     
