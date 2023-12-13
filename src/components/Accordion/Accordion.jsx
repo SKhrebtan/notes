@@ -16,7 +16,7 @@ export const Accordion = () => {
     },[normalizedFilter])
 
     return (
-        <>
+        <div>
         <input 
         type="text"
          name="filter"
@@ -34,6 +34,6 @@ export const Accordion = () => {
                 />
             )}
         </ul>
-</>
+</div>
     )
 }

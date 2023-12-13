@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection,getDoc,updateDoc, setDoc, doc } from 'firebase/firestore/lite';
 import {ReactComponent as DeleteSvg} from '../../img/delete.svg';
-import { StyledForm } from "./Sentences.styled";
+import { StyledForm, StyledMainDiv } from "./Sentences.styled";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAbHFE1wTJXRbo8Iwye_MU_tTlQDfCr15I",
@@ -56,20 +56,22 @@ const handleDelete = async (key) => {
   fetchData(); 
 }
 return (
-    <div>
+    <StyledMainDiv>
       <StyledForm onSubmit={handleSubmit}>
                <input className='input' type='text' name='en' placeholder='English'/>
-      
-          <input className='input' type='text' name='ua' placeholder='Ukrainian'/>
-        <button className='button' type="submit">Add new sentence</button>
+                <input className='input' type='text' name='ua' placeholder='Ukrainian'/>
+            <button className='button' type="submit">Add new sentence</button>
       </StyledForm>
-      <ul style={{listStyle: 'none', display: 'flex', justifyContent:'center',flexWrap: 'wrap', padding: '0px'}}>
+      <ul className='list'>
         {Object.entries(sentences).map(([key, value]) => (
-          <li style={{width: '400px', display: 'flex',  alignItems:'center', gap:'20px', border: '3px solid #27ae60', borderRadius: '6px', padding: "15px", boxShadow: '0 0 10px rgba(0, 0, 0, 0.4)', backgroundColor: '#ecf0f1', margin: '10px'}} key={key}>
-            <strong style={{width: '206px'}}>{key}</strong><span style={{width: '206px'}}>{value}</span><button style={{width: '24px', height: '24px', padding:'0px', cursor: 'pointer', backgroundColor: 'transparent', border: 'none'}} type='button' onClick={()=>handleDelete(key)}><DeleteSvg/></button>
+          <li className='li' key={key}>
+            <div className='translate-block'>
+            <strong style={{width: 'calc((100% - 10px) / 2)'}}>{key}</strong><span style={{width: 'calc((100% - 10px) / 2)'}}>{value}</span>
+            </div>
+            <button style={{width: '24px', height: '24px', padding:'0px', cursor: 'pointer', backgroundColor: 'transparent', border: 'none'}} type='button' onClick={()=>handleDelete(key)}><DeleteSvg/></button>
           </li>
         ))}
       </ul>
-    </div>
+    </StyledMainDiv>
 )
 }

@@ -1,4 +1,44 @@
 import styled from "styled-components";
+export const StyledMainDiv = styled.div`
+.list {
+  list-style: none; 
+  display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   padding: 16px;
+    gap: 15px;
+ }
+
+.li {
+  width: 400px;
+   display: flex; 
+   align-items:center;
+   justify-content: space-between;
+    gap:20px; 
+    border: 3px solid #27ae60;
+     border-radius: 6px; 
+     padding: 15px 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      background-color: #ecf0f1;
+      @media screen and (min-width:768px) {
+        width: calc((100% - 15px) / 2);
+       }
+       @media screen and (min-width:1168px) {
+        width: calc((100% - 30px) / 3);
+       }
+            @media screen and (min-width:1440px) {
+        width: calc((100% - 45px) / 4);
+       }
+}
+
+.translate-block{
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  gap:10px;
+}
+`
 
 export const StyledForm = styled.form`
 max-width: 400px; /* Максимальна ширина форми */

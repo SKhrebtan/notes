@@ -1,15 +1,20 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
+export const StyledNav = styled.nav`
+background-color: #3498db; 
+display: flex;
+// justify-content: center;
+margin-bottom: 15px;
+`
+
 export const StyledUl = styled.ul`
-margin:0 0 20px 0;
+margin: 0 auto;
+padding: 10px 0px;
 list-style: none;
 display: flex;
-justify-content: center;
-gap: 75px;
-background-color: #3498db; 
-padding: 10px;
-text-align: center;
+gap: 20px;
+
 }
 `
 
