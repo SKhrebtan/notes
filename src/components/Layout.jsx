@@ -9,7 +9,7 @@ export const Layout = () => {
     <>
         <Navbar />
         <Suspense fallback={null}>
-            <Outlet />
+            <Outlet/>
         </Suspense>
       </>
     );

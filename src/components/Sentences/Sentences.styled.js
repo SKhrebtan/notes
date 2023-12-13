@@ -3,7 +3,7 @@ export const StyledMainDiv = styled.div`
 .list {
   list-style: none; 
   display: flex;
-   justify-content: center;
+   
    flex-wrap: wrap;
    padding: 16px;
     gap: 15px;

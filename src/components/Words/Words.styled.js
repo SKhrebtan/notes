@@ -5,7 +5,7 @@ export const StyledMainDiv = styled.div`
   list-style: none; 
   display: flex;
   flex-direction:row;
-   justify-content: center;
+
    flex-wrap: wrap;
    padding: 16px;
    gap: 15px;
