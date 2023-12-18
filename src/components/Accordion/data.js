@@ -5,26 +5,32 @@ export const AccordionData = [
         a: 'GraphQL is a query language for your API, defining types and fields on those types, not tied to any specific database, backed by existing code.',
         additionalInfo: [
             {
+                id: '01',
             q: 'Declarative Data Fetching',
             a: 'Clients can specify the structure of the response they need, and the server will return only the requested data. This helps in avoiding over-fetching or under-fetching of data.'
         },
         {
+            id: '02',
             q: 'Single Endpoint',
             a: 'Unlike REST, which often requires multiple endpoints for different resources, GraphQL typically uses a single endpoint for all data operations. This simplifies the API structure and makes it more flexible.'
         },
         {
+            id: '03',
             q: 'Strong Typing',
             a: 'GraphQL APIs are strongly typed, and a schema defines the types and operations that are available. This allows for better validation of queries and introspection of the API.'
         },
         {
+            id: '04',
             q: 'Real-time Data with Subscriptions',
             a: 'GraphQL supports real-time data updates through subscriptions. Clients can subscribe to specific events, and the server will push updates to clients when relevant data changes.'
         },
         {
+            id: '05',
             q: 'Introspection',
             a: 'Clients can query the GraphQL schema to discover the types and capabilities of the API. This self-documenting feature makes it easier for developers to understand and interact with the API.'
         },
         {
+            id: '06',
             q: 'Backend Aggregation',
             a: 'GraphQL can aggregate data from multiple sources on the server side, enabling clients to retrieve complex data structures in a single request.'
         }
@@ -37,34 +43,42 @@ export const AccordionData = [
         a: "Next.js is a popular open-source React framework for building web applications. It is maintained by Vercel, a platform for deploying and hosting web applications. Next.js is designed to make it easy to create server-rendered React applications and provides a variety of features to simplify the development process.",
         additionalInfo: [
             {
+                id: '01',
             q: 'Server-Side Rendering (SSR)',
             a: 'Next.js allows you to implement server-side rendering, which means that the initial rendering of pages can be done on the server rather than in the browser. This can lead to faster page loads and better search engine optimization (SEO).'
         },
         {
+            id: '02',
             q: 'Static Site Generation (SSG)',
             a: 'Next.js supports static site generation, where pages can be pre-built at build time. This is useful for content that doesnt change frequently, as it allows for fast loading times and reduces the need for server resources.'
         },
         {
+            id: '03',
             q: 'Automatic Code Splitting',
             a: 'Next.js automatically splits the JavaScript code into smaller chunks, and only loads the code necessary for the requested page. This can improve the initial loading speed of your application.'
         },
         {
+            id: '04',
             q: 'File-Based Routing',
             a: 'Next.js uses a file-based routing system, where the file structure in the pages directory corresponds to the routes in your application. This makes it intuitive and easy to organize your project.'
         },
         {
+            id: '05',
             q: 'API Routes',
             a: 'Next.js allows you to create API routes within your project, making it easy to build serverless functions and handle backend logic.'
         },
         {
+            id: '06',
             q: 'CSS-in-JS Support',
             a: 'Next.js has built-in support for styling solutions like CSS-in-JS, allowing developers to style components using their preferred styling approach.'
         },
         {
+            id: '07',
             q: 'Plugin System',
             a: 'Next.js has a plugin system that allows developers to extend the functionality of their applications by integrating various plugins.'
         },
         {
+            id: '08',
             q: 'TypeScript Support',
             a: 'Next.js has excellent support for TypeScript, making it easy to use TypeScript in your React applications. Next.js has become a popular choice for building React applications, especially for projects that require server-side rendering or static site generation. It simplifies many aspects of web development and offers a great developer experience. '
         }
@@ -77,34 +91,42 @@ export const AccordionData = [
         a: 'React is an open-source frontend JS library that used for building composable user interface, especially for single page-application. It uses JSX syntax, that allows developers to write HTML in JS code. It uses virtual DOM insteat of Real considering that Real DOM manipulations are expensive. Follows undirectional or one-way data flow or data bindings. Uses reusable / composable UI components to develop the view.',
         additionalInfo: [
             {
+                id: '01',
             q: 'Components',
             a: 'React applications are built using components. Components are reusable, self-contained pieces of code that represent a part of the user interface. Components can be composed together to build complex UIs.'
         },
         {
+            id: '02',
             q: 'Virtual DOM',
             a: 'React uses a virtual DOM (Document Object Model) to improve the performance of UI updates. Instead of manipulating the actual DOM directly, React creates a virtual representation of the DOM in memory and updates it efficiently. This virtual DOM is then compared to the real DOM, and only the necessary changes are applied.'
         },
         {
+            id: '03',
             q: 'JSX',
             a: 'JSX (JavaScript XML) is a syntax extension for JavaScript recommended by React. It allows you to write HTML elements and components in a syntax that looks similar to XML or HTML. JSX is then transpiled to regular JavaScript by tools like Babel.'
         },
         {
+            id: '04',
             q: 'State and Props',
             a: 'React components can have state, which represents the local mutable data for that component. Props (short for properties) are used to pass data from a parent component to a child component. The state and props of a component determine its behavior and appearance.'
         },
         {
+            id: '05',
             q: 'Lifecycle Methods',
             a: 'React components have lifecycle methods that are called at different stages of a components existence. These methods include componentDidMount, componentDidUpdate, and componentWillUnmount, among others. They allow developers to perform actions at specific points in a components life.'
         },
         {
+            id: '06',
             q: 'React Hooks',
             a: 'Introduced in React 16.8, hooks are functions that enable the use of state and other React features in functional components. They provide a way to use state and side effects in functional components, making them more powerful and expressive.'
         },
         {
+            id: '07',
             q: 'React Router',
             a: 'React Router is a popular library for handling navigation in React applications. It allows you to define routes and navigate between different views or components.'
         },
         {
+            id: '08',
             q: 'Context API',
             a: 'React provides a Context API that allows data to be passed through the component tree without having to pass props manually at every level. This is useful for sharing global state or configuration.'
         }
@@ -117,34 +139,42 @@ export const AccordionData = [
         a: 'TypeScript is a programming language developed and maintained by Microsoft. It is a superset of JavaScript, meaning that all valid JavaScript code is also valid TypeScript code. TypeScript adds static typing to JavaScript, which is not inherently present in the standard JavaScript language. Use of interfaces for complex type definitions. Avoid bugs with the ease of readability and validation.',
         additionalInfo: [
             {
+                id: '01',
             q: 'Static Typing',
             a: 'TypeScript introduces static typing to JavaScript, allowing developers to specify the types of variables, function parameters, and return values. This helps catch type-related errors during development rather than at runtime.'
         },
         {
+            id: '02',
             q: 'Compiled Language',
             a: 'TypeScript is a compiled language. The TypeScript compiler (tsc) translates TypeScript code into JavaScript, which can then be executed by browsers or Node.js. The compilation step allows developers to leverage the features of TypeScript while still producing standard JavaScript.'
         },
         {
+            id: '03',
             q: 'ECMAScript Compatibility',
             a: 'TypeScript is designed to be a superset of JavaScript, which means that any valid JavaScript code is also valid TypeScript code. This makes it easy for developers to adopt TypeScript gradually in their existing projects.'
         },
         {
+            id: '04',
             q: 'Object-Oriented Features',
             a: 'TypeScript supports object-oriented programming features such as classes, interfaces, inheritance, and access modifiers. These features enhance code organization, maintainability, and help catch certain classes of errors early in the development process.'
         },
         {
+            id: '05',
             q: 'Tooling Support',
             a: 'TypeScript has excellent tooling support, including integrations with popular code editors like Visual Studio Code. Editors that support TypeScript provide features such as code completion, refactoring, and error checking.'
         },
         {
+            id: '06',
             q: 'Declaration Files',
             a: 'TypeScript allows the use of declaration files (with a .d.ts extension) to describe the types and shape of existing JavaScript code, enabling developers to use TypeScript in projects that include JavaScript libraries or legacy code.'
         },
         {
+            id: '07',
             q: 'Enhanced Readability',
             a: 'With explicit type annotations, TypeScript code can be more self-documenting, making it easier for developers to understand the intent and structure of the code.'
         },
         {
+            id: '08',
             q: 'Community and Ecosystem',
             a: 'TypeScript has gained widespread adoption in the developer community. Many popular libraries and frameworks provide TypeScript typings, and the TypeScript community actively contributes to the development of the language.'
         }
@@ -157,42 +187,52 @@ export const AccordionData = [
         a: 'Node.js is an open-source, cross-platform JavaScript runtime environment that allows developers to build server-side and network applications using JavaScript. It is designed to be lightweight, efficient, and scalable, making it well-suited for building fast and data-intensive applications.',
         additionalInfo: [
             {
+                id: '01',
             q: 'JavaScript Runtime',
             a: 'Node.js is not a programming language but rather a runtime environment. It allows you to execute JavaScript code outside of a web browser. This is particularly useful for building server-side applications, where JavaScript was traditionally not the primary language.'
         },
         {
+            id: '02',
             q: 'Event-Driven and Asynchronous',
             a: 'Node.js is built on an event-driven, non-blocking I/O model. This means that it can handle many simultaneous connections without waiting for tasks to complete. Asynchronous programming is a key feature, allowing developers to write scalable and high-performance applications.'
         },
         {
+            id: '03',
             q: 'Single-Threaded, Non-Blocking',
             a: 'Node.js uses a single-threaded event loop to handle multiple concurrent connections. While it runs JavaScript in a single thread, it utilizes asynchronous operations and callbacks to efficiently manage I/O operations without blocking the execution of other tasks.'
         },
         {
+            id: '04',
             q: 'npm (Node Package Manager)',
             a: 'npm is the package manager for Node.js. It allows developers to easily manage and share libraries (packages) of JavaScript code. With npm, you can install, share, and manage dependencies for your Node.js applications.'
         },
         {
+            id: '05',
             q: 'V8 JavaScript Engine',
             a: 'Node.js is built on the V8 JavaScript engine, developed by Google for the Chrome browser. V8 compiles JavaScript code to native machine code, resulting in fast and efficient execution.'
         },
         {
+            id: '06',
             q: 'Modules',
             a: 'Node.js uses a module system that allows developers to organize their code into reusable and maintainable components. The require keyword is used to include external modules, and developers can create their own modules for better code organization and separation of concerns.'
         },
         {
+            id: '07',
             q: 'Cross-Platform',
             a: 'Node.js is designed to be cross-platform and is available for various operating systems, including Windows, macOS, and Linux. This allows developers to build and deploy Node.js applications on a wide range of platforms.'
         },
         {
+            id: '08',
             q: 'Use Cases',
             a: 'Node.js is well-suited for building various types of applications, including web servers, RESTful APIs, real-time applications (e.g., chat applications, gaming servers), microservices, and command-line tools.'
         },
         {
+            id: '09',
             q: 'Community and Ecosystem',
             a: 'Node.js has a large and active community of developers. Its ecosystem includes a vast number of open-source libraries and frameworks, making it easy to find solutions to common development challenges.'
         },
         {
+            id: '10',
             q: 'Frameworks',
             a: 'While Node.js can be used directly, many developers choose to use frameworks to simplify the development process. Popular Node.js frameworks include Express.js for web applications, Nest.js for building scalable and maintainable server-side applications, and Socket.io for real-time applications.'
         }
@@ -280,42 +320,52 @@ export const AccordionData = [
         a: 'Amazon Web Services (AWS) is a comprehensive and widely adopted cloud computing platform provided by Amazon. AWS offers a vast array of cloud services, including computing power, storage, databases, machine learning, analytics, security, Internet of Things (IoT), and more. These services can be used to build scalable and flexible applications, host websites, and manage various IT resources without the need for on-premises infrastructure.',
         additionalInfo: [
             {
+                id: '01',
             q: 'Compute Services',
             a: 'Amazon EC2 (Elastic Compute Cloud): Provides virtual servers in the cloud, allowing you to run applications and services. AWS Lambda: Allows you to run code without provisioning or managing servers. Its a serverless compute service.'
         },
         {
+            id: '02',
             q: 'Storage and Databases',
             a: 'Amazon S3 (Simple Storage Service): Object storage service for storing and retrieving any amount of data. Amazon RDS (Relational Database Service): Managed relational database service supporting various database engines. Amazon DynamoDB: Fully managed NoSQL database service.'
         },
         {
+            id: '03',
             q: 'Networking',
             a: 'Amazon VPC (Virtual Private Cloud): Provides a logically isolated section of the AWS Cloud where you can launch resources. Amazon Route 53: Scalable domain name system (DNS) web service.'
         },
         {
+            id: '04',
             q: 'Security and Identity',
             a: 'AWS Identity and Access Management (IAM): Enables you to securely control access to AWS services and resources. Amazon Cognito: Provides authentication, authorization, and user management for web and mobile apps.'
         },
         {
+            id: '05',
             q: 'Machine Learning and AI',
             a: 'Amazon SageMaker: Fully managed service that enables developers to build, train, and deploy machine learning models. Amazon Comprehend: Natural language processing service for extracting insights and relationships from text.'
         },
         {
+            id: '06',
             q: 'Analytics',
             a: 'Amazon Redshift: Fully managed data warehouse service for running complex queries on large datasets. Amazon Athena: Query service that allows you to analyze data in Amazon S3 using standard SQL.'
         },
         {
+            id: '07',
             q: 'Internet of Things (IoT)',
             a: 'AWS IoT Core: Managed cloud service that enables secure communication between IoT devices and the AWS Cloud.'
         },
         {
+            id: '08',
             q: 'Containers and Kubernetes',
             a: 'Amazon ECS (Elastic Container Service): Highly scalable, high-performance container management service. Amazon EKS (Elastic Kubernetes Service): Fully managed Kubernetes service.'
         },
         {
+            id: '09',
             q: 'Serverless Computing',
             a: 'AWS Step Functions: Serverless function orchestrator for building workflows. AWS SAM (Serverless Application Model): Framework for building serverless applications.'
         },
         {
+            id: '10',
             q: 'DevOps',
             a: 'AWS CodePipeline: Continuous integration and continuous delivery (CI/CD) service. AWS CodeDeploy: Automates code deployments to any instance, including Amazon EC2 instances and on-premises servers.'
         }
@@ -338,42 +388,52 @@ export const AccordionData = [
             a: "Jest is a popular JavaScript testing framework developed by Facebook. It is widely used for testing JavaScript code, including applications built with React, Angular, and other web technologies. Jest provides a comprehensive set of tools for testing JavaScript code, making it easier to write unit tests, integration tests, and snapshot tests.",
             additionalInfo: [
                 {
+                    id: '01',
                 q: 'Zero Configuration',
                 a: 'Jest aims to be easy to set up and use. It comes with sensible defaults and requires minimal configuration. You can start using Jest in your project without much setup, and it can detect and run your tests automatically.'
             },
             {
+                id: '02',
                 q: 'Test Runners',
                 a: 'Jest includes a test runner that executes test suites and provides detailed information about test results. It can run tests in parallel, which makes it efficient for large codebases.'
             },
             {
+                id: '03',
                 q: 'Matchers',
                 a: 'Jest provides a set of built-in matchers that allow you to make assertions in your tests. Matchers include common ones like toBe, toEqual, toContain, and many more. They help you verify that your code behaves as expected.'
             },
             {
+                id: '04',
                 q: 'Snapshots',
                 a: 'Jest introduces the concept of snapshots, which allows you to capture the output of a component or function and compare it against future runs. This is especially useful for UI components to ensure that their output does not unexpectedly change.'
             },
             {
+                id: '05',
                 q: 'Mocking',
                 a: 'Jest provides powerful mocking capabilities, allowing you to easily mock dependencies and control their behavior during tests. This is helpful for isolating the code you want to test and ensuring that tests focus on specific units.'
             },
             {
+                id: '06',
                 q: 'Code Coverage',
                 a: 'Jest can generate code coverage reports, showing which parts of your code are covered by tests and which are not. This helps you identify areas that may need additional testing.'
             },
             {
+                id: '07',
                 q: 'Async Testing',
                 a: 'Jest handles asynchronous code well and provides utilities for testing asynchronous operations. This includes functions like async/await support, done callbacks, and Promise support.'
             },
             {
+                id: '08',
                 q: 'Setup and Teardown',
                 a: 'Jest allows you to set up and tear down test environments before and after test suites or individual tests. This is useful for managing resources, database connections, or other setup needed for testing.'
             },
             {
+                id: '09',
                 q: 'Test Suites and Test Cases',
                 a: 'Jest organizes tests into test suites and individual test cases. This hierarchical structure helps in organizing and running tests effectively.'
             },
             {
+                id: '10',
                 q: 'Extensibility',
                 a: 'Jest is extensible and allows you to customize various aspects of its behavior. You can add plugins, custom matchers, or use presets to tailor Jest to your specific needs.'
             },
@@ -386,46 +446,57 @@ export const AccordionData = [
                 a: "NestJS is a powerful and extensible backend framework for building server-side applications using TypeScript or JavaScript. It is heavily inspired by Angular and shares many concepts with it, such as decorators, dependency injection, and modules. NestJS is designed to help developers create scalable and maintainable server-side applications.",
                 additionalInfo: [
                     {
+                        id: '01',
                     q: 'Modular Architecture',
                     a: 'NestJS encourages the use of a modular and organized code structure. Applications are built by organizing code into modules, each containing controllers, services, and other related components.'
                 },
                 {
+                    id: '02',
                     q: 'Controllers',
                     a: 'Controllers in NestJS are responsible for handling incoming requests, processing them, and returning a response. They are decorated with @Controller and handle specific routes.'
                 },
                 {
+                    id: '03',
                     q: 'Services',
                     a: 'Services encapsulate the business logic of the application. They are injected into controllers and other components using dependency injection. Services handle data processing, interact with databases, and perform other operations.'
                 },
                 {
+                    id: '04',
                     q: 'Dependency Injection',
                     a: 'NestJS uses dependency injection, which makes it easy to manage and organize components in the application. Components like controllers, services, and modules can be injected into each other, promoting a modular and testable codebase.'
                 },
                 {
+                    id: '05',
                     q: 'Modules',
                     a: 'Modules are used to organize the application into functional units. They encapsulate related components, making it easier to manage the applications structure. Modules can be reused and shared across different parts of the application.'
                 },
                 {
+                    id: '06',
                     q: 'Middleware',
                     a: 'Middleware functions can be used to process requests before they reach the route handler. Middleware can perform tasks like logging, authentication, and request processing.'
                 },
                 {
+                    id: '07',
                     q: 'Exception Handling',
                     a: 'NestJS provides a robust system for handling exceptions. Custom exception filters can be implemented to catch and process exceptions at different levels in the application.'
                 },
                 {
+                    id: '08',
                     q: 'Interceptors',
                     a: 'Interceptors are used to intercept the flow of data between the client and the application. They can be used for tasks such as logging, transformation, and error handling.'
                 },
                 {
+                    id: '09',
                     q: 'Guards',
                     a: 'Guards are used to control access to routes based on certain conditions. They can be used for authentication, authorization, and input validation.'
                 },
                 {
+                    id: '10',
                     q: 'WebSockets',
                     a: 'NestJS supports WebSockets, making it suitable for building real-time applications and features.'
                 },
                 {
+                    id: '11',
                     q: 'TypeScript Support',
                     a: 'NestJS is built with TypeScript in mind, providing features like static typing, decorators, and decorators-based metadata.'
                 }
@@ -438,26 +509,32 @@ export const AccordionData = [
                     a: "Express.js, commonly referred to as Express, is a fast, minimalist, and flexible web application framework for Node.js. It provides a robust set of features to develop web and mobile applications. Express is designed to make it easier to build web applications and APIs with Node.js by providing a set of helpful utilities and conventions.",
                     additionalInfo: [
                         {
+                            id: '01',
                         q: 'Routing',
                         a: 'Express provides a simple and flexible routing system. Routes define the endpoints at which your application can be accessed and the corresponding functions (handlers) that should be executed when these endpoints are hit.'
                     },
                     {
+                        id: '02',
                         q: 'Middleware',
                         a: 'Middleware functions in Express have access to the request (req) and response (res) objects. They can perform various tasks such as modifying the request or response, executing code, or terminating the request-response cycle.'
                     },
                     {
+                        id: '03',
                         q: 'HTTP Methods',
                         a: 'Express supports standard HTTP methods like GET, POST, PUT, DELETE, etc. These methods are used to define the behavior of routes.'
                     },
                     {
+                        id: '04',
                         q: 'Template Engines',
                         a: 'Express allows the use of template engines (such as EJS, Pug, or Handlebars) to generate HTML dynamically on the server side.'
                     },
                     {
+                        id: '05',
                         q: 'Static Files',
                         a: 'Express makes it easy to serve static files like images, stylesheets, and scripts.'
                     },
                     {
+                        id: '06',
                         q: 'Middleware Libraries',
                         a: 'There are numerous middleware libraries available for Express that extend its functionality. Examples include body-parser for parsing request bodies, cookie-parser for handling cookies, and morgan for logging.'
                     }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, FormEvent } from "react";
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection,getDoc,updateDoc, setDoc, doc } from 'firebase/firestore/lite';
 import {ReactComponent as DeleteSvg} from '../../img/delete.svg';
@@ -29,10 +29,12 @@ const fetchData = async () => {
 useEffect(() => {fetchData();
 },[])
 
-const handleSubmit = async (e) => {
+const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 e.preventDefault();
-const author = e.target.elements.author.value
-const quote = e.target.elements.quote.value
+const formElements = e.currentTarget.elements as HTMLFormControlsCollection;
+
+  const author = (formElements.namedItem('en') as HTMLInputElement)?.value;
+  const quote = (formElements.namedItem('ua') as HTMLInputElement)?.value;
 const wordsCollection = collection(db, 'vocabulary');
 
 const docSnapshot = await getDoc(doc(wordsCollection, 'quotes'));
@@ -41,9 +43,9 @@ if (docSnapshot.exists()) {
   await updateDoc(doc(wordsCollection, 'quotes'), updatedData);
     }
 fetchData();
-e.target.reset();
+e.currentTarget.reset();
 }
-const handleDelete = async (key) => {
+const handleDelete = async (key: string) => {
     const wordsCollection = collection(db, 'vocabulary');
     const docRef = doc(wordsCollection, 'quotes');
     const docSnapshot = await getDoc(docRef);
@@ -66,7 +68,7 @@ return (
     <button className='button' type="submit">Add new quote</button>
       </StyledForm>
       <ul className='list'>
-        {Object.entries(quotes).map(([key, value]) => (
+        {Object.entries(quotes).map(([key, value]: [string, any]) => (
           <li className='li' key={key}>
             <div className='translate-block'>
             <strong className='author'>{key}</strong><span className='quote' style={{flexGrow: '1'}}>{value}</span>

@@ -1,20 +1,36 @@
-import { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import {ReactComponent as ArrowSvg} from 'img/arrowdown2.svg'
 import './Accordion.css'
 import { Accordion2 } from './Accordion2/Accordion2'
 
+interface QA {
+    id: string,
+    q: string,
+    a: string
+      }
+ 
+interface AccordionItemProps {
+    faqItem: {
+        id: string
+        q: string,
+        a: string,
+        additionalInfo?: QA[],
+        summary?: string
+    }; // Replace YourItemType with the actual type of faqItem
+    onClick: () => void; // Replace void with the actual return type of your onClick function
+    isOpen: boolean;
+  }
 
-
-export const AccordionItem = ({ faqItem, onClick, isOpen }) => {
-const itemRef = useRef(null)
-const [itemHeight, setItemHeight] = useState(0);
-const [contentHeight, setContentHeight] = useState(0);
-const [initialHeight, setInitialHeight] = useState(0);
+export const AccordionItem: React.FC<AccordionItemProps> = ({ faqItem, onClick, isOpen }) => {
+const itemRef = useRef<HTMLDivElement | null>(null)
+const [itemHeight, setItemHeight] = useState<number | null>(0);
+const [contentHeight, setContentHeight] = useState<number | null>(0);
+const [initialHeight, setInitialHeight] = useState<number | null>(0);
 
 
 useEffect(() => {
     
-    if(!itemRef.current.scrollHeight) return;
+    if(!itemRef.current?.scrollHeight) return;
     
     if(itemHeight !== null){       
         setInitialHeight(itemRef.current.scrollHeight)
@@ -27,8 +43,8 @@ useEffect(() => {
             setContentHeight(initialHeight);
         }
         }       
-        // eslint-disable-next-line react-hooks/exhaustive-deps     
-}, [faqItem.q, faqItem.a, faqItem.additionalInfo, faqItem.summary,itemHeight]);
+        
+}, [faqItem.q, faqItem.a, faqItem.additionalInfo, faqItem.summary, itemHeight, initialHeight]);
  
     return (
             <li className='accordion-item'>

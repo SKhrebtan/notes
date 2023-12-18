@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, FormEvent } from "react";
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs, getDoc,updateDoc, doc , setDoc} from 'firebase/firestore/lite';
 import {ReactComponent as DeleteSvg} from '../../img/delete.svg';
@@ -30,10 +30,13 @@ const fetchData = async () => {
 useEffect(() => {fetchData();
 },[])
 
-const handleSubmit = async (e) => {
+const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 e.preventDefault();
-const enWord = e.target.elements.en.value
-const uaWord = e.target.elements.ua.value
+const formElements = e.currentTarget.elements as HTMLFormControlsCollection;
+
+  const enWord = (formElements.namedItem('en') as HTMLInputElement)?.value;
+  const uaWord = (formElements.namedItem('ua') as HTMLInputElement)?.value;
+
 const wordsCollection = collection(db, 'vocabulary');
 
 const docSnapshot = await getDoc(doc(wordsCollection, 'words'));
@@ -42,9 +45,9 @@ if (docSnapshot.exists()) {
   await updateDoc(doc(wordsCollection, 'words'), updatedData);
     }
 fetchData();
-e.target.reset();
+e.currentTarget.reset();
 }
-const handleDelete = async (key) => {
+const handleDelete = async (key: string) => {
     const wordsCollection = collection(db, 'vocabulary');
     const docRef = doc(wordsCollection, 'words');
     const docSnapshot = await getDoc(docRef);
@@ -70,7 +73,7 @@ return (
     <button className='button' type="submit">Add new word</button>
       </StyledForm>
       <ul className='list'>
-        {Object.entries(words).map(([key, value]) => (
+        {Object.entries(words).map(([key, value]: [string, any]) => (
           <li className='li' key={key}>
             <div className='translate-block'>
             <strong style={{width: 'calc((100% - 10px) / 2)'}}>{key}</strong><span style={{width: 'calc((100% - 10px) / 2)'}}>{value}</span>

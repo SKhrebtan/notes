@@ -1,19 +1,38 @@
-import { useRef } from 'react'
+import React, { useRef } from 'react'
 // import {ReactComponent as ArrowSvg} from 'img/arrowdown2.svg'
 import './Accordion2.css'
 import { ReactComponent as PlusSvg } from 'img/plus.svg';
 import { ReactComponent as MinusSvg } from 'img/minus.svg';
 
-export const AccordionItem2 = ({faqItem, onClick, isOpen, setItemHeight}) => {
-    const itemRef = useRef(null)
+interface QA {
+    id: string,
+    q: string,
+    a: string
+      }
+
+interface AccordionItemProps {
+    faqItem: {
+        id: string
+        q: string,
+        a: string,
+        additionalInfo?: QA[],
+        summary?: string
+    };
+    onClick: () => void;
+    isOpen: boolean;
+    setItemHeight: (height:number) => void
+  }
+
+export const AccordionItem2: React.FC<AccordionItemProps> = ({faqItem, onClick, isOpen, setItemHeight}) => {
+    const itemRef = useRef<HTMLDivElement | null>(null)
 
     return (
             <li className={`accordion-item2 ${isOpen ? 'isopened' : ''}`}>
                  <button
                 onClick={()=>{
                                       onClick()
-                    if (itemRef.current.scrollHeight !== null){
-                        setItemHeight(isOpen ? 0 : itemRef.current.scrollHeight);
+                    if (itemRef.current?.scrollHeight !== null){
+                        setItemHeight(isOpen ? 0 : itemRef.current?.scrollHeight ?? 0);
                     } 
                                                       
                 }}
@@ -25,7 +44,7 @@ export const AccordionItem2 = ({faqItem, onClick, isOpen, setItemHeight}) => {
             <div
                 className="accordion-collapse2"
                 style={
-                    isOpen ? {height: itemRef.current.scrollHeight} : {height: '0px'}
+                    isOpen ? {height: itemRef.current?.scrollHeight} : {height: '0px'}
                 }
             >
                         <div className='accordion-body' ref={itemRef}>{faqItem.a}</div>
