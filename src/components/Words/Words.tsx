@@ -4,7 +4,11 @@ import { getFirestore, collection, getDocs, getDoc,updateDoc, doc , setDoc} from
 import {ReactComponent as DeleteSvg} from '../../img/delete.svg';
 import { StyledForm } from "components/Sentences/Sentences.styled";
 import { StyledMainDiv } from "./Words.styled";
-
+import axios from "axios";
+type TranslationObject = {
+  translation: string;
+  // other properties if applicable
+};
 const firebaseConfig = {
   apiKey: "AIzaSyAbHFE1wTJXRbo8Iwye_MU_tTlQDfCr15I",
   authDomain: "vocabluary-ff9a9.firebaseapp.com",
@@ -19,7 +23,12 @@ const db = getFirestore(app);
 
 
 export const Words = () => {
-    const [words, setWords] = useState({})
+    const [words, setWords] = useState({});
+    const [englishWord, setEnglishWord] = useState('');
+    const [ukrainianWord, setUkrainianWord] = useState('');
+    const [word, setWord] = useState('');
+    const [translateList, setTranslateList] = useState<TranslationObject[]>([]);
+
 const fetchData = async () => {
   const vocabCollection = collection(db, 'vocabulary')
   const querySnapshot = await getDocs(vocabCollection);
@@ -34,7 +43,7 @@ const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 e.preventDefault();
 const formElements = e.currentTarget.elements as HTMLFormControlsCollection;
 
-  const enWord = (formElements.namedItem('en') as HTMLInputElement)?.value;
+  const enWord = englishWord || (formElements.namedItem('en') as HTMLInputElement)?.value;
   const uaWord = (formElements.namedItem('ua') as HTMLInputElement)?.value;
 
 const wordsCollection = collection(db, 'vocabulary');
@@ -64,12 +73,61 @@ console.log(updatedData)
 
   fetchData(); 
 }
+
+const handleDefinitionSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+    const {data: {matches}} = await axios.get(`https://api.mymemory.translated.net/get?q=${word}&langpair=en|uk`);
+    setTranslateList(matches);
+    
+  setEnglishWord(word)
+  setWord('');
+}
+
+const handleWordInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const { name, value } = e.currentTarget;
+if (name === 'en') {
+  setEnglishWord(value)
+} else if (name === 'ua'){
+  setUkrainianWord(value)
+} else {
+  setWord(value)
+}
+}
+
+const handleWordPick = (word: string) => {
+  setUkrainianWord(word)
+  setTranslateList([])
+}
+function removeDotAtEnd(word:string) {
+   if (word.endsWith('.')) {
+    return word.slice(0, -1);
+   }
+  return word;
+}
 return (
     <StyledMainDiv>
+    <StyledForm onSubmit={handleDefinitionSubmit}>
+      <input onChange={handleWordInput} className='input' type='text' name='word' placeholder='English' value={word}/>
+      <button className='button' type="submit">find definition</button>
+      </StyledForm>
+      {translateList.length > 0 && <ul className='translatelist'>
+      {translateList.map(({translation}) => {
+        const lowercaseTranslation = translation && typeof translation === 'string'
+        ? removeDotAtEnd(translation.toLowerCase())
+        : '';
+        return(
+          <li key={translation}>
+            <p className='highlight-orange-text'>{lowercaseTranslation}</p>
+            <button className='choosebutton' type='button' onClick={()=> handleWordPick(translation)}>Choose</button>
+            </li>        
+        )
+      })}
+      </ul>}
+     
       <StyledForm onSubmit={handleSubmit}>
-      <input className='input' type='text' name='en' placeholder='English'/>
+      <input onChange={handleWordInput} value={englishWord} className='input' type='text' name='en' placeholder='English'/>
       
-      <input className='input' type='text' name='ua' placeholder='Ukrainian'/>
+      <input onChange={handleWordInput} value={ukrainianWord} className='input' type='text' name='ua' placeholder='Ukrainian'/>
     <button className='button' type="submit">Add new word</button>
       </StyledForm>
       <ul className='list'>
