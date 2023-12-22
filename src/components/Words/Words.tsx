@@ -56,7 +56,6 @@ if (docSnapshot.exists()) {
 fetchData();
 setEnglishWord('');
 setUkrainianWord('');
-e.currentTarget.reset();
 }
 const handleDelete = async (key: string) => {
     const wordsCollection = collection(db, 'vocabulary');
