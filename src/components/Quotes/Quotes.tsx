@@ -33,18 +33,21 @@ const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 e.preventDefault();
 const formElements = e.currentTarget.elements as HTMLFormControlsCollection;
 
-  const author = (formElements.namedItem('en') as HTMLInputElement)?.value;
-  const quote = (formElements.namedItem('ua') as HTMLInputElement)?.value;
+  const author = (formElements.namedItem('author') as HTMLInputElement)?.value;
+  const quote = (formElements.namedItem('quote') as HTMLInputElement)?.value;
+  e.currentTarget.reset();
 const wordsCollection = collection(db, 'vocabulary');
 
 const docSnapshot = await getDoc(doc(wordsCollection, 'quotes'));
 if (docSnapshot.exists()) {
   const updatedData = { [author]: quote , ...docSnapshot.data() };
   await updateDoc(doc(wordsCollection, 'quotes'), updatedData);
+  fetchData();
+
     }
-fetchData();
-e.currentTarget.reset();
+
 }
+
 const handleDelete = async (key: string) => {
     const wordsCollection = collection(db, 'vocabulary');
     const docRef = doc(wordsCollection, 'quotes');
