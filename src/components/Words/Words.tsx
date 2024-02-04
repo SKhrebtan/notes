@@ -31,7 +31,6 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 export const Words = () => {
-  const [showModal, setShowModal] = useState(false);
   const [words, setWords] = useState({});
   const [englishWord, setEnglishWord] = useState('');
   const [ukrainianWord, setUkrainianWord] = useState('');

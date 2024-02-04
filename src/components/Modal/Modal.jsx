@@ -1,4 +1,4 @@
-import { StyledBackdrop, StyledModal } from "./Modal.styled"
+import { StyledModal } from "./Modal.styled"
 import { useState } from 'react';
 export const Modal = ({ handleDelete, data, setShowModal }) => {
     const [inputValue, setInputValue] = useState('');

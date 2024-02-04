@@ -8,7 +8,7 @@ import {
   setDoc,
   doc,
 } from 'firebase/firestore/lite';
-import { ReactComponent as DeleteSvg } from '../../img/delete.svg';
+// import { ReactComponent as DeleteSvg } from '../../img/delete.svg';
 import { StyledForm, StyledMainDiv } from './Sentences.styled';
 
 const firebaseConfig = {
@@ -53,19 +53,19 @@ export const Sentences = () => {
     }
   };
 
-  const handleDelete = async (key: string) => {
-    const wordsCollection = collection(db, 'vocabulary');
-    const docRef = doc(wordsCollection, 'sentences');
-    const docSnapshot = await getDoc(docRef);
+  // const handleDelete = async (key: string) => {
+  //   const wordsCollection = collection(db, 'vocabulary');
+  //   const docRef = doc(wordsCollection, 'sentences');
+  //   const docSnapshot = await getDoc(docRef);
 
-    if (docSnapshot.exists()) {
-      const updatedData = { ...docSnapshot.data() };
-      delete updatedData[key];
-      setSentences(updatedData);
-      await setDoc(docRef, updatedData);
-    }
-    fetchData();
-  };
+  //   if (docSnapshot.exists()) {
+  //     const updatedData = { ...docSnapshot.data() };
+  //     delete updatedData[key];
+  //     setSentences(updatedData);
+  //     await setDoc(docRef, updatedData);
+  //   }
+  //   fetchData();
+  // };
   return (
     <StyledMainDiv>
       <StyledForm onSubmit={handleSubmit}>
