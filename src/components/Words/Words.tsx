@@ -9,9 +9,9 @@ import {
   doc,
   setDoc,
 } from 'firebase/firestore/lite';
-import { ReactComponent as DeleteSvg } from '../../img/delete.svg';
 import { StyledForm } from 'components/Sentences/Sentences.styled';
 import { StyledMainDiv } from './Words.styled';
+import { Liwka } from './Liwka';
 import axios from 'axios';
 type TranslationObject = {
   translation: string;
@@ -31,6 +31,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 export const Words = () => {
+  const [showModal, setShowModal] = useState(false);
   const [words, setWords] = useState({});
   const [englishWord, setEnglishWord] = useState('');
   const [ukrainianWord, setUkrainianWord] = useState('');
@@ -81,6 +82,8 @@ export const Words = () => {
 
     fetchData();
   };
+
+
 
   const handleDefinitionSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -178,30 +181,39 @@ export const Words = () => {
       </StyledForm>
       <ul className="list">
         {Object.entries(words).map(([key, value]: [string, any]) => (
-          <li className="li" key={key}>
-            <div className="translate-block">
-              <strong style={{ width: 'calc((100% - 10px) / 2)' }}>
-                {key}
-              </strong>
-              <span style={{ width: 'calc((100% - 10px) / 2)' }}>{value}</span>
-            </div>
-            <button
-              style={{
-                width: '24px',
-                height: '24px',
-                padding: '0px',
-                cursor: 'pointer',
-                backgroundColor: 'transparent',
-                border: 'none',
-              }}
-              type="button"
-              onClick={() => handleDelete(key)}
-            >
-              <DeleteSvg />
-            </button>
-          </li>
+          <Liwka
+            handleDelete={handleDelete}
+            data={key}
+            value={value}
+            key={key}
+                    />
+          // <li className="li" key={key}>
+          //             <div className="translate-block">
+          //     <strong style={{ width: 'calc((100% - 10px) / 2)' }}>
+          //       {key}
+          //     </strong>
+          //     <span style={{ width: 'calc((100% - 10px) / 2)' }}>{value}</span>
+          //   </div>
+          //   <button
+          //     style={{
+          //       width: '24px',
+          //       height: '24px',
+          //       padding: '0px',
+          //       cursor: 'pointer',
+          //       backgroundColor: 'transparent',
+          //       border: 'none',
+          //     }}
+          //     type="button"
+          //     // onClick={() => handleDelete(key)}
+          //     onClick={()=>setShowModal(true)}
+          //   >
+          //     <DeleteSvg />
+          //   </button>
+          // </li>
+          
         ))}
       </ul>
+      
     </StyledMainDiv>
   );
 };

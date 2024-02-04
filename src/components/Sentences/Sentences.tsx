@@ -89,7 +89,7 @@ export const Sentences = () => {
               </strong>
               <span style={{ width: 'calc((100% - 10px) / 2)' }}>{value}</span>
             </div>
-            <button
+            {/* <button
               style={{
                 width: '24px',
                 height: '24px',
@@ -102,7 +102,7 @@ export const Sentences = () => {
               onClick={() => handleDelete(key)}
             >
               <DeleteSvg />
-            </button>
+            </button> */}
           </li>
         ))}
       </ul>

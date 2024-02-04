@@ -44,6 +44,7 @@ export const StyledMainDiv = styled.div`
 }
 
 .li {
+  position: relative;
   width: 400px;
    display: flex; 
    align-items:center;
